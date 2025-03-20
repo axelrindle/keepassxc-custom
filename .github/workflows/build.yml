@@ -36,7 +36,7 @@ jobs:
           git init
           git remote add origin https://github.com/keepassxreboot/keepassxc.git
           git fetch origin
-          git checkout ${{ inputs.version }}
+          git checkout ${{ inputs.version || 'develop' }}
 
       - name: Checkout patches
         uses: actions/checkout@v4
