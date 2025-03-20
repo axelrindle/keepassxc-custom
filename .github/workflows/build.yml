@@ -1,6 +1,9 @@
 name: Build custom KeepassXC version
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       version:
