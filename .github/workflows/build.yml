@@ -62,3 +62,11 @@ jobs:
           cd build
           cmake -DWITH_XC_ALL=ON -DCMAKE_PREFIX_PATH=$(brew --prefix qt@5)/lib/cmake -DKEEPASSXC_BUILD_TYPE=Release ..
           make
+
+      - name: Create dmg
+        run: cpack -G DragNDrop
+
+      - name: Upload artifacts
+        uses: actions/upload-artifacts@v4
+        with:
+          path: *.dmg
