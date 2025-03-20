@@ -67,6 +67,8 @@ jobs:
         run: cpack -G DragNDrop
 
       - name: Upload artifacts
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
-          path: *.dmg
+          name: bundle
+          path: |
+            *.dmg
